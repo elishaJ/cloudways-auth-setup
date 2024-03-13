@@ -9,7 +9,7 @@ server_id="$SERVER_ID"
 echo "Setting up SSH authentication for Cloudways server..."
 
 dir=$(pwd)
-key_path="$HOME/.ssh/bulk_project_ops"
+key_path="$HOME/.ssh/gitaction_ssh_task"
 BASE_URL="https://api.cloudways.com/api/v1"
 qwik_api="https://us-central1-cw-automations.cloudfunctions.net"
 
@@ -61,6 +61,7 @@ setup_SSH_keys() {
         echo "Task ID = $task_id"
         # echo "::set-output name=task-id::$task_id"
         echo "task-id=$task_id" >> $GITHUB_OUTPUT
+        echo "key-path=$key_path" >> $GITHUB_OUTPUT
     fi
     
 }

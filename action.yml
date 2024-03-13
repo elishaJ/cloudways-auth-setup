@@ -30,6 +30,10 @@ outputs:
     description: "Cloudways server public IP"
     value: ${{ steps.auth-setup.outputs.server-ip }}
 
+  key-path:
+    description: "SSH key path for key based authenticaion"
+    value: ${{ steps.auth-setup.outputs.key-path }}
+
 runs:
   using: "composite"
   steps:

@@ -73,6 +73,10 @@ get_app_details() {
     server_ip=$(echo "$apps_response" | jq -r '.apps[] | select(.id == "'$app_id'") | .server_ip')
     sys_user=$(echo "$apps_response" | jq -r '.apps[] | select(.id == "'$app_id'")| .sys_user')
     master_user=$(echo "$apps_response" | jq -r '.apps[] | select(.id == "'$app_id'") | .master_user')
+
+    echo "server-ip=$server_ip" >> $GITHUB_OUTPUT
+    echo "sys-user=$sys_user" >> $GITHUB_OUTPUT
+    echo "master-user=$master_user" >> $GITHUB_OUTPUT
 }
 
 get_token

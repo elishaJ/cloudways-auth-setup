@@ -59,7 +59,8 @@ setup_SSH_keys() {
     else
         echo "SSH key setup completed successfully"
         echo "Task ID = $task_id"
-        echo "::set-output name=task-id::$task_id"
+        # echo "::set-output name=task-id::$task_id"
+        echo "task-id=$task_id" >> $GITHUB_OUTPUT
     fi
     
 }
